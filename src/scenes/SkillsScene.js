@@ -1,42 +1,109 @@
+// path: src/scenes/SkillsScene.js
 import { motion } from 'framer-motion';
 import { SKILLS } from '@/src/lib/content';
-import { staggerContainer, fadeUp } from '@/src/lib/motion';
+import { staggerContainer } from '@/src/lib/motion';
 
 export default function SkillsScene() {
   return (
-    <section className="min-h-screen flex flex-col justify-center py-24 px-6 bg-neutral-950">
-      <div className="max-w-6xl w-full mx-auto">
-        <div className="mb-16">
-          <span className="text-sm font-mono text-neon-blue tracking-widest">02 / ARSENAL</span>
-          <h2 className="text-4xl mt-2 font-bold">Technical Proficiency</h2>
+    <section className="min-h-screen flex flex-col justify-center py-24 px-6 relative overflow-hidden">
+      
+      {/* Background Ambience */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-blue/5 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="max-w-7xl w-full mx-auto relative z-10">
+        
+        {/* Cinematic Header */}
+        <div className="mb-20 flex items-end justify-between border-b border-white/10 pb-8">
+          <div>
+            <motion.span 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="text-xs font-mono text-neon-blue tracking-[0.2em] uppercase"
+            >
+              02 // System Capabilities
+            </motion.span>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-5xl md:text-6xl mt-4 font-bold tracking-tight"
+            >
+              Technical Arsenal
+            </motion.h2>
+          </div>
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="hidden md:block text-right"
+          >
+            <p className="text-xs text-gray-500 font-mono">
+              OPERATIONAL STATUS: ACTIVE<br />
+              MODULES LOADED: {SKILLS.length}
+            </p>
+          </motion.div>
         </div>
 
+        {/* The Grid */}
         <motion.div 
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-10%" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {SKILLS.map((skill, i) => (
-            <motion.div 
-              key={skill.category}
-              variants={fadeUp}
-              className="p-6 border-l-2 border-gray-800 hover:border-neon-blue transition-colors duration-500 bg-white/5"
-            >
-              <h3 className="text-xl font-bold mb-4">{skill.category}</h3>
-              <ul className="space-y-2">
-                {skill.items.map(item => (
-                  <li key={item} className="text-gray-400 text-sm font-mono flex items-center">
-                    <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mr-3" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+            <SkillCard key={skill.category} skill={skill} index={i} />
           ))}
         </motion.div>
       </div>
     </section>
+  );
+}
+
+// Sub-component for cleaner code
+function SkillCard({ skill, index }) {
+  return (
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+      }}
+      className="group relative bg-white/5 backdrop-blur-sm border border-white/10 hover:border-neon-blue/50 transition-all duration-500 overflow-hidden"
+    >
+      {/* "Scanning" Shine Effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full scan-shine z-0 pointer-events-none" />
+
+      <div className="p-8 relative z-10">
+        {/* Card Header */}
+        <div className="flex justify-between items-start mb-6">
+          <h3 className="text-2xl font-light tracking-wide text-white group-hover:text-neon-blue transition-colors">
+            {skill.category}
+          </h3>
+          <span className="text-[10px] font-mono text-gray-600 group-hover:text-neon-blue transition-colors border border-gray-800 px-2 py-1 rounded">
+             SYS_0{index + 1}
+          </span>
+        </div>
+
+        {/* Skills List as "Data Tags" */}
+        <div className="flex flex-wrap gap-2">
+          {skill.items.map((item, idx) => (
+            <span 
+              key={item} 
+              className="text-sm text-gray-400 font-mono px-3 py-1 bg-black/40 border border-white/5 rounded-sm hover:text-white hover:border-white/20 transition-all cursor-default"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Decorative Corner Markers */}
+      <div className="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="w-2 h-2 border-t border-r border-neon-blue" />
+      </div>
+      <div className="absolute bottom-0 left-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="w-2 h-2 border-b border-l border-neon-blue" />
+      </div>
+    </motion.div>
   );
 }
