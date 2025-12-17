@@ -1,0 +1,31 @@
+{
+  "personal": {
+    "name": "Hrithik Sham",
+    "email": "hrithikksham@gmail.com",
+    "location": "Kumbakonam, TN",
+    "linkedin": "https://linkedin.com/in/hrithik-sham-d2811",
+    "tagline": "I craft software with precision and soul."
+  },
+  "projects": [
+    {
+      "name": "DistraX",
+      "description": "Minimalist Productivity OS",
+      "details": "Cinematic transitions, offline-first architecture, distraction-free environment."
+    },
+    {
+      "name": "Payroll Management System",
+      "description": "MERN Stack Enterprise Solution",
+      "details": "Automated salary processing for 50+ employees, JWT security, Chart.js dashboards."
+    },
+    {
+      "name": "Yournote App",
+      "description": "React Native & FastAPI",
+      "details": "Secure, encrypted note taking with 10k+ note capacity and offline sync."
+    },
+    {
+      "name": "Autonomous LLM Agent",
+      "description": "AI-Driven Query Engine",
+      "details": "LangChain agent for parsing API docs and generating live calls."
+    }
+  ]
+}

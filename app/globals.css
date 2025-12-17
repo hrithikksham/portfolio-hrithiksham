@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: #ffffff;
+  --background: #000000;
+  --neon-blue: #00B3FF;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-blue);
+}
+
+/* Utilities */
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+.neon-glow {
+  box-shadow: 0 0 15px rgba(0, 179, 255, 0.3);
+}
+
+/* --- New Styles --- */
+
+/* Cinematic B&W Landscape Filter */
+.bw-landscape-effect {
+  filter: grayscale(100%) contrast(115%) brightness(90%) sepia(10%);
+  mix-blend-mode: luminosity;
+}
+
+/* Stars & Comet Background Animation */
+.stars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.stars-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: move-stars 100s linear infinite;
+}
+
+.stars-layer:nth-child(2) {
+    animation-duration: 150s;
+    opacity: 0.7;
+}
+
+.stars-layer:nth-child(3) {
+    animation-duration: 200s;
+    opacity: 0.5;
+}
+
+/* Create stars using box-shadow for performance */
+.stars-layer::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: transparent;
+    box-shadow: 
+        10vw 15vh 1px white, 30vw 25vh 1px white, 50vw 10vh 2px white, 70vw 35vh 1px white, 90vw 5vh 2px white,
+        15vw 45vh 1px white, 35vw 55vh 2px white, 55vw 30vh 1px white, 75vw 65vh 2px white, 95vw 20vh 1px white,
+        5vw 75vh 2px white, 25vw 85vh 1px white, 45vw 60vh 2px white, 65vw 90vh 1px white, 85vw 70vh 2px white;
+}
+
+.comet {
+    position: absolute;
+    top: 30%;
+    left: -10%;
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.8), var(--neon-blue));
+    border-radius: 50%;
+    filter: drop-shadow(0 0 5px var(--neon-blue));
+    animation: move-comet 15s ease-in-out infinite;
+    opacity: 0;
+}
+
+@keyframes move-stars {
+    from { transform: translateY(0) rotate(0deg); }
+    to { transform: translateY(-100px) rotate(5deg); }
+}
+
+@keyframes move-comet {
+    0% { left: -20%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 120%; opacity: 0; }
+}
