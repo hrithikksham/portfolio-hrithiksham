@@ -119,7 +119,7 @@ export default function IdentityScene() {
           {/* This wrapper ensures the image scales while sticking to the bottom */}
           <div className="relative w-full max-w-[400px] md:max-w-full h-full">
             <Image
-              src="/profile3.png" // MUST be a transparent PNG
+              src="/profileee.png" // MUST be a transparent PNG
               alt={PERSONAL.name}
               fill
               className="object-contain object-bottom drop-shadow-[0_0_50px_rgba(0,0,0,0.8)]"
