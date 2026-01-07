@@ -45,7 +45,7 @@ export default function IdentityScene() {
           <motion.div variants={fadeUp} className="flex items-center gap-4 mb-6 md:mb-8">
              <span className="h-[1px] w-8 bg-neon-blue inline-block"></span>
              <span className="text-xs md:text-sm font-mono text-neon-blue tracking-widest uppercase font-bold">
-               01 / About Me
+               About Me
              </span>
           </motion.div>
 

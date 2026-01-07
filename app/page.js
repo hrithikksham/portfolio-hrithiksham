@@ -7,7 +7,6 @@ import HeroScene from '@/src/scenes/HeroScene';
 import IdentityScene from '@/src/scenes/IdentityScene';
 import SkillsScene from '@/src/scenes/SkillsScene';
 import ProjectsScene from '@/src/scenes/ProjectsScene';
-import CraftScene from '@/src/scenes/CraftScene';
 import ExperienceScene from '@/src/scenes/ExperienceScene';
 import CTAScene from '@/src/scenes/CTAScene';
 
@@ -24,9 +23,8 @@ export default function Home() {
           <HeroScene />
           <IdentityScene />
           <SkillsScene />
-          <ProjectsScene />
-          <CraftScene />
           <ExperienceScene />
+          <ProjectsScene />
           <CTAScene />
         </>
       )}

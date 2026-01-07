@@ -43,7 +43,7 @@ export default function LoadingScreen({ onComplete }) {
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
             >
-              PORTFOLIO OS v1.0
+              PORTFOLIO 
             </motion.p>
           </div>
         </motion.div>

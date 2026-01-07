@@ -20,7 +20,7 @@ export default function SkillsScene() {
               whileInView={{ opacity: 1, x: 0 }}
               className="text-xs font-mono text-neon-blue tracking-[0.2em] uppercase"
             >
-              02 // System Capabilities
+              EXPERTISE
             </motion.span>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ export default function SkillsScene() {
               transition={{ delay: 0.1 }}
               className="text-5xl md:text-6xl mt-4 font-bold tracking-tight"
             >
-              Technical Arsenal
+              Technical Skills
             </motion.h2>
           </div>
           <motion.div 
@@ -36,10 +36,6 @@ export default function SkillsScene() {
             whileInView={{ opacity: 1 }}
             className="hidden md:block text-right"
           >
-            <p className="text-xs text-gray-500 font-mono">
-              OPERATIONAL STATUS: ACTIVE<br />
-              MODULES LOADED: {SKILLS.length}
-            </p>
           </motion.div>
         </div>
 
@@ -79,9 +75,6 @@ function SkillCard({ skill, index }) {
           <h3 className="text-2xl font-light tracking-wide text-white group-hover:text-neon-blue transition-colors">
             {skill.category}
           </h3>
-          <span className="text-[10px] font-mono text-gray-600 group-hover:text-neon-blue transition-colors border border-gray-800 px-2 py-1 rounded">
-             SYS_0{index + 1}
-          </span>
         </div>
 
         {/* Skills List as "Data Tags" */}

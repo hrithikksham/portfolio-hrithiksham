@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
 
 export const metadata = {
-  title: 'Hrithik Sham | Portfolio OS',
+  title: 'Hrithik Sham | Portfolio ',
   description: 'Engineer. Designer. Builder. A cinematic portfolio experience.',
 }
 
