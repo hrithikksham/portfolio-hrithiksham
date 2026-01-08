@@ -37,7 +37,7 @@ export default function ExperienceScene() {
             className="flex items-center gap-4 mb-12 pl-14"
           >
             <span className="text-sm font-mono text-neon-blue tracking-widest uppercase font-bold">
-              05 / VENTURES
+              COMPANY
             </span>
           </motion.div>
 
@@ -125,7 +125,7 @@ export default function ExperienceScene() {
              className="flex items-center gap-4 mb-12 pl-14"
           >
             <span className="text-sm font-mono text-gray-500 tracking-widest uppercase font-bold">
-              06 / PROFESSIONAL EXPERIENCE
+              PROFESSIONAL EXPERIENCE
             </span>
           </motion.div>
 

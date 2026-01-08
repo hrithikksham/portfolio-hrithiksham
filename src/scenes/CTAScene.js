@@ -17,7 +17,7 @@ export default function CTAScene() {
     <section className="min-h-screen relative flex flex-col items-center justify-center bg-black overflow-hidden pt-20 pb-10">
       
       {/* 1. ATMOSPHERIC BACKGROUND */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[200vw] h-[60vh] md:w-[150vw] md:h-[50vh] bg-neon-blue/20 blur-[80px] md:blur-[120px] rounded-[100%] pointer-events-none opacity-50" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[200vw] h-[60vh] md:w-[150vw] md:h-[50vh] bg-neon-blue/40 blur-[40px] md:blur-[120px] rounded-[100%] pointer-events-none opacity-50" />
       <div className="absolute inset-0 bg-[url('/film-grain.png')] opacity-20 pointer-events-none" />
 
       {/* 2. MAIN CONTENT */}

@@ -11,7 +11,7 @@ export default function ProjectsScene() {
       <div className="max-w-7xl w-full mx-auto">
         <div className="mb-16 md:mb-24 flex items-end justify-between">
            <div>
-            <span className="text-sm font-mono text-neon-blue tracking-widest">03 / WORKS</span>
+            <span className="text-sm font-mono text-neon-blue tracking-widest">WORKS</span>
             <h2 className="text-4xl md:text-6xl mt-2 font-bold">Selected Projects</h2>
            </div>
         </div>
