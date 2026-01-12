@@ -1,0 +1,88 @@
+        
+        {/* --- SECTION 1: FOUNDER / STARTUP --- */}
+        <div className="mb-20 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="flex items-center gap-4 mb-12 pl-14"
+          >
+            <span className="text-sm font-mono text-neon-blue tracking-widest uppercase font-bold">
+              COMPANY
+            </span>
+          </motion.div>
+
+          {COMPANIES.map((company, i) => (
+            <motion.div 
+              key={company.name}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-10%" }}
+              variants={fadeUp}
+              className="relative pl-14 mb-16"
+            >
+              {/* Timeline Node */}
+              <div className="absolute left-[11px] top-1 w-[18px] h-[18px] bg-black border-2 border-neon-blue rounded-full shadow-[0_0_10px_#00B3FF] z-10" />
+
+              {/* Founder Card */}
+              <div className="bg-white/5 border border-white/10 rounded-sm p-8 hover:border-neon-blue/30 transition-colors duration-500">
+                <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                  <div>
+                    <h3 className="text-3xl font-bold text-white mb-1">{company.name}</h3>
+                    <p className="text-neon-blue font-mono text-sm">{company.role}</p>
+                  </div>
+                  <span className="text-gray-500 font-mono text-xs mt-2 md:mt-0 border border-gray-800 px-3 py-1 rounded-full">
+                    {company.period}
+                  </span>
+                </div>
+
+                <p className="text-gray-300 text-lg leading-relaxed mb-8 border-l-2 border-gray-700 pl-4">
+                  {company.description}
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Focus Areas */}
+                  <div>
+                    <h4 className="flex items-center gap-2 text-sm font-bold text-white uppercase tracking-wider mb-4">
+                      <Target size={16} className="text-neon-blue" /> Focus Areas
+                    </h4>
+                    <ul className="space-y-2">
+                      {company.focusAreas.map((item, idx) => (
+                        <li key={idx} className="text-gray-400 text-sm flex items-start gap-2">
+                          <span className="text-neon-blue mt-1">›</span> {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Highlights */}
+                  <div>
+                    <h4 className="flex items-center gap-2 text-sm font-bold text-white uppercase tracking-wider mb-4">
+                      <Zap size={16} className="text-neon-blue" /> Key Highlights
+                    </h4>
+                    <ul className="space-y-2">
+                      {company.highlights.map((item, idx) => (
+                        <li key={idx} className="text-gray-400 text-sm flex items-start gap-2">
+                          <span className="text-neon-blue mt-1">›</span> {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Responsibilities Footer */}
+                <div className="mt-8 pt-6 border-t border-white/5">
+                  <h4 className="flex items-center gap-2 text-sm font-bold text-white uppercase tracking-wider mb-4">
+                    <Layers size={16} className="text-neon-blue" /> Responsibilities
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {company.responsibilities.map((res, idx) => (
+                      <span key={idx} className="px-3 py-1 bg-black/40 border border-white/5 rounded-full text-xs text-gray-400">
+                        {res}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
