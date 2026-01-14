@@ -84,7 +84,7 @@ export default function IdentityScene() {
             
             {/* Primary: Download Resume (100% White Style) */}
             <a 
-              href="/resume.pdf" 
+              href="/resume final Hrithik Sham.pdf" 
               download="Hrithik_Sham_Resume.pdf"
               className="group relative px-8 py-4 bg-white text-black rounded-full sans-serif tracking-wide flex items-center justify-center gap-3 overflow-hidden transition-transform hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
             >
